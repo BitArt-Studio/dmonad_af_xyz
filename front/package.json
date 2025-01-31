@@ -1,0 +1,38 @@
+{
+  "name": "p2",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:prod": "vite --mode production",
+    "dev:test": "vite --mode testnet",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build --mode production && wrangler pages deploy ./dist --project-name=monad-af-xyz --branch=main",
+    "deploy:artfrac": "vite build --mode production && wrangler pages deploy ./dist --project-name=fractal-xyz --branch=main"
+  },
+  "dependencies": {
+    "@iconify/vue": "^4.1.2",
+    "axios": "^1.7.7",
+    "hashids": "^2.3.0",
+    "p5": "^1.11.2",
+    "pinia": "^2.1.0",
+    "vue": "^3.4.29",
+    "web3": "^4.16.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.20",
+    "browserify-zlib": "^0.2.0",
+    "postcss": "^8.4.45",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "tailwindcss": "^3.4.10",
+    "util": "^0.12.5",
+    "vite": "^5.3.1",
+    "vite-plugin-remove-console": "^2.2.0",
+    "wrangler": "^3.90.0"
+  }
+}

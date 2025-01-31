@@ -1,0 +1,24 @@
+{
+  "name": "can2data",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@pinata/sdk": "^2.1.0",
+    "axios": "^1.7.9",
+    "file-saver": "^2.0.5",
+    "hashids": "^2.3.0",
+    "nft.storage": "^7.2.0",
+    "p5": "^1.11.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5"
+  }
+}

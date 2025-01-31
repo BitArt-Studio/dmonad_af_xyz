@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xb65Eb4Df5d25a06eeF5AA3d02C964e1E9499dD44",
+  "SCAN_LINK": "https://explorer.monad-devnet.devnet101.com/address/0xb65Eb4Df5d25a06eeF5AA3d02C964e1E9499dD44",
+  "NETWORK": {
+    "NAME": "Monad Devnet",
+    "SYMBOL": "DMON",
+    "ID": 20143
+  },
+  "NFT_NAME": "RDS",
+  "SYMBOL": "RDS",
+  "MAX_SUPPLY": 10000,
+  "WEI_COST": 100000000000000000,
+  "DISPLAY_COST": 0.1,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
+  "SHOW_BACKGROUND": true
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: auto; /* 修改: 添加滚动支持 */
+        }
+
+        #artcanvas {
+            border: 1px solid #000; /* 可选：添加边框以便观察 */
+            position: relative; /* 修改: 设置position为relative */
+            width: 1000px; /* 修改: 设置固定宽度 */
+            height: 1000px; /* 修改: 设置固定高度 */
+            /* transform: scale(0.5); 
+            transform-origin: center; */
+        }
+    </style>
+    <script type="module">
+        import *as fcompress from 'https://ordinals-testnet.fractalbitcoin.io/content/314aae19120b30858cdb028e5827bf22418232dfda6ec6b56c06e9fee736b4cbi0';
+
+        async function getBaseFile() {
+            const baser = await fetch('https://ordinals-testnet.fractalbitcoin.io/content/552d6fc455e02f29638d80e88b1994087b433812a7f0f2df50598d067182e0e8i0');
+            const bases = await baser.text();
+            const base = fcompress.strFromU8(fcompress.gunzipSync(new Uint8Array(Array.from(atob(bases)).map((char) => char.charCodeAt(0)))));
+            eval(base);
+        }
+        
+        getBaseFile();
+    </script>
+    <script type="text/javascript"
+            src="https://ordinals-testnet.fractalbitcoin.io/content/c3cd92c7db32ef4a14c5982112dbd8c9d209ae31203ac2e8024faf032012c31bi0"></script>
+</head>
+<body>
+<!-- <canvas id="canvas"></canvas> -->
+<script type="text/javascript">
+
+        function getQueryParam(param) 
+        {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function setup() {
+            const canvas = createCanvas(1000, 1000);
+            canvas.id('artcanvas');
+            //canvas.parent('canvas');
+            const hashseed = getQueryParam('hashseed');
+            initData(hashseed);
+        }
+
+        function draw() {
+            renderMain();
+        }
+</script>
+</body>
+</html>
