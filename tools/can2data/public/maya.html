@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>p5.js Canvas</title>
+    <script src="/p5.min.js"></script>
+    <!-- <script src="/amaya.js"></script> -->
+    <script type="text/javascript"
+    src="https://ordinals.fractalbitcoin.io/content/7dfd69c6c299b856003f717a73e49fd025039cea642c7adef9eae429a655c983i0"></script>
+
+</head>
+<body>
+    <script type="text/javascript">
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function setup() {
+        const canvas = createCanvas(500, 500);
+        canvas.id('artcanvas');
+        //let hashseed = "znG7gJLZ0Kn7nkG4";
+        const hashseed = getQueryParam('hashseed');
+        console.log(hashseed);
+
+        initData(hashseed);
+    }
+
+    function draw() {
+        renderMain();
+    }
+    </script>
+</body>
+</html>
