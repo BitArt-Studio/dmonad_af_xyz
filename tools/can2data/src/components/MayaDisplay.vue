@@ -33,10 +33,9 @@ import axios from 'axios'
 const p5Container = ref(null)
 let p5Canvas = null
 
-const PINATA_API_KEY = '36aff5b787616b207bff'
-const PINATA_SECRET_KEY = '294327f1610357c6f1e7daef6d5c21a19a0a0591c390a88edfb3eed04db76683'
-const PINATA_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiMmY5ZTI1Mi01OWEwLTRhOTAtYTE0NC1hYTQ4NWVjNzc5ZjciLCJlbWFpbCI6Im1pY2hhZWx0YkAxNjMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjEsImlkIjoiRlJBMSJ9LHsiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjEsImlkIjoiTllDMSJ9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjM2YWZmNWI3ODc2MTZiMjA3YmZmIiwic2NvcGVkS2V5U2VjcmV0IjoiMjk0MzI3ZjE2MTAzNTdjNmYxZTdkYWVmNmQ1YzIxYTE5YTBhMDU5MWMzOTBhODhlZGZiM2VlZDA0ZGI3NjY4MyIsImV4cCI6MTc2ODMwNDM4OH0.nJ7nt5TXwFsDQIcPLBqnCeSSJCB-VfXbyfWyO4blAnI' // 推荐使用 JWT
-
+const PINATA_API_KEY = import.meta.env.PINATA_API_KEY
+const PINATA_SECRET_KEY = import.meta.env.PINATA_SECRET_KEY // 推荐使用 JWT
+const PINATA_JWT = import.meta.env.PINATA_JWT
 const isUploading = ref(false)
 const ipfsUrl = ref('')
 
@@ -143,10 +142,10 @@ const uploadToIPFS = async () => {
       formData,
       {
         headers: {
-          'Authorization': `Bearer ${PINATA_JWT}`,
+          //'Authorization': `Bearer ${PINATA_JWT}`,
           // 如果使用 API KEY 方式，则使用以下头部
-          // 'pinata_api_key': PINATA_API_KEY,
-          // 'pinata_secret_api_key': PINATA_SECRET_KEY,
+          'pinata_api_key': PINATA_API_KEY,
+          'pinata_secret_api_key': PINATA_SECRET_KEY,
         },
       }
     )
